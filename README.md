@@ -2,7 +2,7 @@
 
 
 
-对应的服务端接入文档，请移步[服务端接入文档](https://github.com/KoalaEatChicken/OrangeSDK-templet1/考拉游戏平台sdk服务端接入文档 v2.0.md)
+对应的服务端接入文档，请移步: [服务端接入文档](https://github.com/KoalaEatChicken/OrangeSDK-templet1/blob/master/%E8%80%83%E6%8B%89%E6%B8%B8%E6%88%8F%E5%B9%B3%E5%8F%B0sdk%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%8E%A5%E5%85%A5%E6%96%87%E6%A1%A3%20v2.0.md)
 
 
 
