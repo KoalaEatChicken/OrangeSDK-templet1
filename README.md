@@ -4,6 +4,17 @@
 
 对应服务端的接入，请移步: [服务端接入文档](https://github.com/KoalaEatChicken/OrangeSDK-templet1/blob/master/%E8%80%83%E6%8B%89%E6%B8%B8%E6%88%8F%E5%B9%B3%E5%8F%B0sdk%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%8E%A5%E5%85%A5%E6%96%87%E6%A1%A3%20v2.0.md)
 
++ 新增提示(3.0.3+)：
+```objective-c
+// 新接入的sdk里面如果有该方法-kgk_applicationWillTerminate:，请接入方在AppDelegate.m中的-applicationWillTerminate:方法中，添加对如下方法的调用
+[Koala kgk_applicationWillTerminate: application];
+
+// 接口说明
+/**
+ 需要在AppDelegate.m的applicationWillTerminate:里面调用这个方法
+ */
++ (void)kgk_applicationWillTerminate:(UIApplication *)application;
+```
 
 
 ##  接入前说明
@@ -130,12 +141,23 @@ __weak typeof(self) weakSelf = self;
     }
 }];
 ```
+```objective-c
+// 新接入的sdk里面如果有该方法-kgk_applicationWillTerminate:，请接入方在AppDelegate.m中的-applicationWillTerminate:方法中，添加对该方法的调用
+
+- (void)applicationWillTerminate:(UIApplication *)application {
+    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
+    [Koala kgk_applicationWillTerminate: application];
+}
+```
 
 
 
 #### 2.1.2 接口及参数说明
 
 - 初始化接口，是一个有网络请求的接口，所以这里是存在初始化失败的状况的，请接入务必处理好初始化失败的状况~
+
+- -kgk_applicationWillTerminate:是v3.0.3之后新公开的方法名
 
 - 初始化失败：如果是接口返回错误等原因，调试阶段，可与我方协调解决；但是**网络请求失败等不可阻碍的因素，请接入方一定进行处理（失败重试，多次失败就友好提示用户等方案，更重要的是这种状况下，不能让用户进行登录后续操作！）；因为初始化失败的情况下，调用SDK登录、充值这些接口都是有问题的！**
 
