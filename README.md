@@ -4,7 +4,7 @@
 
 对应服务端的接入，请移步: [服务端接入文档](https://github.com/KoalaEatChicken/OrangeSDK-templet1/blob/master/%E8%80%83%E6%8B%89%E6%B8%B8%E6%88%8F%E5%B9%B3%E5%8F%B0sdk%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%8E%A5%E5%85%A5%E6%96%87%E6%A1%A3%20v2.0.md)
 
-+ 新增提示(3.0.3+)：
++ 新增提示(2.0.18+, 3.0.3+)：
 ```objective-c
 // 新接入的sdk里面如果有该方法-kgk_applicationWillTerminate:，请接入方在AppDelegate.m中的-applicationWillTerminate:方法中，添加对如下方法的调用
 [Koala kgk_applicationWillTerminate: application];
